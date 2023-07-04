@@ -16,3 +16,6 @@
 [submodule "gits-frontend"]
 	path = gits-frontend
 	url = https://github.com/IT-REX-Platform/gits-frontend.git
+[submodule "flashcard_service"]
+	path = flashcard_service
+	url = https://github.com/IT-REX-Platform/flashcard_service.git

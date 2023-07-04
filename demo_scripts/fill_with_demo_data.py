@@ -153,6 +153,7 @@ query = gql(
                 name: "PSE Vorlesung 1 Materialien",
                 type: MEDIA,
                 rewardPoints: 1,
+                suggestedDate: "2023-06-10T12:39:12.365Z",
                 chapterId: $chapter1Id 
             }
         }) { id }
@@ -161,7 +162,22 @@ query = gql(
                 name: "Java Cheat Sheet",
                 type: MEDIA,
                 rewardPoints: 0,
+                suggestedDate: "2023-06-10T12:39:12.365Z",
                 chapterId: $chapter1Id
+            }
+        }) { id }
+        chapter1Flashcards: createAssessment(input: {
+            metadata: {
+                name: "Chapter 1 Flashcards",
+                type: FLASHCARDS,
+                rewardPoints: 2,
+                suggestedDate: "2023-06-10T12:39:12.365Z",
+                chapterId: $chapter1Id
+            },
+            assessmentMetadata: {
+                skillPoints: 3,
+                skillType: REMEMBER,
+                initialLearningInterval: 3
             }
         }) { id }
         chapter2Content: createMediaContent(input: {
@@ -169,6 +185,7 @@ query = gql(
                 name: "PSE Vorlesung 2 Materialien",
                 type: MEDIA,
                 rewardPoints: 1,
+                suggestedDate: "2023-06-10T12:39:12.365Z",
                 chapterId: $chapter2Id 
             }
         }) { id }
@@ -181,7 +198,7 @@ params = {
 }
 contentRes = client.execute(query, variable_values=params)
 
-# create media record
+# create media records
 query = gql(
     """
     mutation ($chapter1Content: UUID!, $cheatSheetContent: UUID!) {
@@ -208,3 +225,33 @@ params = {
     "cheatSheetContent": contentRes["cheatSheetContent"]["id"]
 }
 mediaRes = client.execute(query, variable_values=params)
+
+# create flashcard set
+query = gql(
+    """
+    mutation ($assessmentId: UUID!) {
+        flashcardSet: createFlashcardSet(input: {
+            assessmentId: $assessmentId,
+            flashcards: [
+                { sides: [
+                    { label: "Question", text: "What is a *string*?", isQuestion: true },
+                    { label: "Answer", text: "A sequence of text characters.", isQuestion: false }
+                ] },
+                { sides: [
+                    { label: "Question", text: "What is a *char*?", isQuestion: true },
+                    { label: "Answer", text: "A single text character.", isQuestion: false }
+                ] },
+                { sides: [
+                    { label: "Question", text: "In Java and C#, the *static* keyword has different meanings when used on classes. What are they?", isQuestion: true },
+                    { label: "Static Classes in C#", text: "In C#, a static class is a class whose members are also all defined as static.", isQuestion: false },
+                    { label: "Static Classes in Java", text: "In Java, only nested classes can be declared static. A static nested class can be instantiated without an instance of the outer class.", isQuestion: false }
+                ] }
+            ]
+        }) { assessmentId }
+    }
+    """
+)
+params = {
+    "assessmentId": contentRes["chapter1Flashcards"]["id"]
+}
+flashcardsRes = client.execute(query, variable_values=params)
