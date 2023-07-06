@@ -19,3 +19,6 @@
 [submodule "flashcard_service"]
 	path = flashcard_service
 	url = https://github.com/IT-REX-Platform/flashcard_service.git
+[submodule "reward_service"]
+	path = reward_service
+	url = https://github.com/IT-REX-Platform/reward_service

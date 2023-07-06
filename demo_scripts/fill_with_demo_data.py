@@ -1,12 +1,28 @@
 # This script fills a server with its gateway at GATEWAY_URL with some demo data
 # Requires the "gql" graphql client
+import urllib
+import json
 
 GATEWAY_URL = "http://127.0.0.1:8080/graphql"
+KEYCLOAK_URL = "http://localhost:9009/realms/GITS/protocol/openid-connect/token"
 
 from gql import gql, Client
 from gql.transport.aiohttp import AIOHTTPTransport
 
-user_token = input("Please enter a valid user token (can be found by looking at the HTTP authorization header in your browser's network inspector when logged into the GITS frontend):\n> ")
+user_name = input("Please enter your user name: ")
+user_password = input("Please enter your password: ")
+
+data = {
+    "grant_type": "password",
+    "client_id": "gits-frontend",
+    "username": user_name,
+    "password": user_password
+}
+
+data = urllib.parse.urlencode(data).encode("utf-8")
+req = urllib.request.Request(KEYCLOAK_URL, data=data)
+with urllib.request.urlopen(req) as response:
+    user_token = json.loads(response.read())["access_token"]
 
 transport = AIOHTTPTransport(url=GATEWAY_URL, headers={
     "authorization": user_token
