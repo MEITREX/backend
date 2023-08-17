@@ -3,8 +3,8 @@ import {getToken} from './token.js';
 
 export const options = {
     stages: [
-        {duration: '20s', target: 0},
-        {duration: '30s', target: 50},
+        {duration: '10s', target: 0},
+        {duration: '1m', target: 50},
         // { duration: '30s', target: 100 },
         // { duration: '30s', target: 200 },
         // { duration: '30s', target: 300 },

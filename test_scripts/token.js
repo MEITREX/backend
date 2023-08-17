@@ -1,5 +1,5 @@
 import http from 'k6/http';
-import { sleep, check } from 'k6';
+import { check } from 'k6';
 
 export let options = {
     vus: 1,
@@ -17,6 +17,7 @@ export  function getToken () {
     };
 
     const res = http.post(`${__ENV.K6_HOST}/realms/${__ENV.K6_REALM}/protocol/openid-connect/token`, data);
+
     check(res, {
         'has JWT access token': (r) => r.json().access_token.length > 0,
         'has JWT refresh token': (r) => r.json().refresh_token.length > 0,
