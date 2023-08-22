@@ -18,6 +18,8 @@ export  function getToken () {
 
     const res = http.post(`${__ENV.K6_HOST}/realms/${__ENV.K6_REALM}/protocol/openid-connect/token`, data);
 
+    console.log(res.json().access_token)
+
     check(res, {
         'has JWT access token': (r) => r.json().access_token.length > 0,
         'has JWT refresh token': (r) => r.json().refresh_token.length > 0,

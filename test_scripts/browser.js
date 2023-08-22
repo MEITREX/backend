@@ -1,5 +1,5 @@
 import { browser } from 'k6/experimental/browser';
-import {sleep} from 'k6';
+import {sleep, check} from 'k6';
 
 export const options = {
     scenarios: {
@@ -31,6 +31,13 @@ export default async function () {
         const submitButton = page.locator('input[type="submit"]');
 
         await Promise.all([page.waitForNavigation(), submitButton.click()]);
+
+        check(page, {
+            header: page.locator('h1').textContent() === 'Dashboard',
+            header2: page.locator('h2').textContent() === 'My Courses',
+            card1: page.locator('div')
+
+        })
 
         sleep(1);
 

@@ -16,7 +16,7 @@ export const options = {
 
 const query = `
 	query MediaRecordsById {
-		mediaRecordsById(ids: "d061f11f-b35a-4dd3-a43b-36e684317251") {
+		mediaRecordsByIds(ids: "d061f11f-b35a-4dd3-a43b-36e684317251") {
 			id
 			name
 			creatorId
@@ -30,8 +30,6 @@ const query = `
 export function setup() {
 	return getToken();
 }
-
-
 
 export default function (data) {
 
