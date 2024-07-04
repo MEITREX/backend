@@ -1,4 +1,5 @@
 @echo off
+docker network create dapr-network
 docker-compose ^
 -f .\graphql_gateway\docker-compose.yml ^
 -f .\media_service\docker-compose.yml ^
