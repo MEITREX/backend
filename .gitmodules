@@ -28,3 +28,6 @@
 [submodule "skilllevel_service"]
 	path = skilllevel_service
 	url = https://github.com/MEITREX/skilllevel_service.git
+[submodule "docprocai_service"]
+	path = docprocai_service
+	url = https://github.com/MEITREX/docprocai_service.git
