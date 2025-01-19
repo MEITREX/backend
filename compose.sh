@@ -13,6 +13,7 @@ docker compose \
 -f ./quiz_service/docker-compose.yml \
 -f ./skilllevel_service/docker-compose.yml \
 -f ./docprocai_service/docker-compose.yml \
--f ./frontend/docker-compose.yml \
 --project-name gits \
-$@
+"$@"
+
+# -f ./frontend/docker-compose.yml \
