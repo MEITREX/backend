@@ -39,7 +39,7 @@ def get_auth_token(user_name: str = None, user_password: str = None, use_local: 
 
     data = {
         "grant_type": "password",
-        "client_id": "gits-frontend",
+        "client_id": "frontend",
         "username": user_name,
         "password": user_password
     }
@@ -68,16 +68,16 @@ if __name__ == "__main__":
     parser.add_argument("--username", help="Usernameo of the user to connect with.")
     parser.add_argument("--password", help="Password of the user to connect with.")
     parser.add_argument("--copy-to-clipboard", action="store_true", dest="copy_to_clipboard", help="Copy the authorization header to the clipboard.")
-    
+
     args = parser.parse_args()
-    
+
     user_token = get_auth_token(args.username, args.password, args.use_local)
-    
+
     print("Your user token:")
     print(user_token)
-    
+
     auth_header = "{ \"authorization\": \"" + user_token + "\" }"
-    
+
     # copy to clipboard
     if(args.copy_to_clipboard):
         pyperclip.copy(auth_header)
