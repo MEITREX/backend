@@ -16,7 +16,7 @@ user_password = input("Please enter your password: ")
 
 data = {
     "grant_type": "password",
-    "client_id": "gits-frontend",
+    "client_id": "frontend",
     "username": user_name,
     "password": user_password
 }
@@ -172,7 +172,7 @@ query = gql(
                 type: MEDIA,
                 rewardPoints: 1,
                 suggestedDate: "2023-06-10T12:39:12.365Z",
-                chapterId: $chapter1Id 
+                chapterId: $chapter1Id
             }
         }) { id }
         cheatSheetContent: createMediaContent(input: {
@@ -190,7 +190,7 @@ query = gql(
                 type: MEDIA,
                 rewardPoints: 1,
                 suggestedDate: "2023-06-10T12:39:12.365Z",
-                chapterId: $chapter2Id 
+                chapterId: $chapter2Id
             }
         }) { id }
     }
@@ -258,13 +258,13 @@ query = gql(
             flashcardSetInput: {
                 flashcards: [
                     { sides: [
-                        { 
+                        {
                             label: "Question",
                             text: "What is a *string*?",
                             isQuestion: true,
                             isAnswer: false
                         },
-                        { 
+                        {
                             label: "Answer",
                             text: "A sequence of text characters.",
                             isQuestion: false,
@@ -272,9 +272,9 @@ query = gql(
                         }
                     ] },
                     { sides: [
-                        { 
-                            label: "Question", 
-                            text: "What is a *char*?", 
+                        {
+                            label: "Question",
+                            text: "What is a *char*?",
                             isQuestion: true,
                             isAnswer: false
                         },
