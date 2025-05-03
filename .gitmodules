@@ -31,3 +31,6 @@
 [submodule "docprocai_service"]
 	path = docprocai_service
 	url = https://github.com/MEITREX/docprocai_service.git
+[submodule "gamification_service"]
+	path = gamification_service
+	url = https://github.com/MEITREX/gamification_service
