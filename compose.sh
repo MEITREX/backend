@@ -14,5 +14,6 @@ docker compose \
 -f ./skilllevel_service/docker-compose.yml \
 -f ./docprocai_service/docker-compose.yml \
 -f ./frontend/docker-compose.yml \
+-f ./gamification_service/docker-compose.yml \
 --project-name gits \
 $@
