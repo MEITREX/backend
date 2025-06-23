@@ -13,5 +13,6 @@ docker-compose ^
 -f .\docprocai_service\docker-compose.yml ^
 -f .\frontend\docker-compose.yml ^
 -f .\gamification_service\docker-compose.yml ^
+-f .\tutor_service\docker-compose.yml ^
 --project-name gits ^
 %*
