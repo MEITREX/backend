@@ -9,6 +9,7 @@ docker-compose ^
 -f .\user_service\docker-compose.yml ^
 -f .\reward_service\docker-compose.yml ^
 -f .\quiz_service\docker-compose.yml ^
+-f .\assignment_service\docker-compose.yml ^
 -f .\skilllevel_service\docker-compose.yml ^
 -f .\docprocai_service\docker-compose.yml ^
 -f .\frontend\docker-compose.yml ^
