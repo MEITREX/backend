@@ -33,4 +33,10 @@
 	url = https://github.com/MEITREX/docprocai_service.git
 [submodule "gamification_service"]
 	path = gamification_service
-	url = https://github.com/MEITREX/gamification_service
+	url = git@github.com:MEITREX/gamification_service.git
+[submodule "assignment_service"]
+	path = assignment_service
+	url = git@github.com:MEITREX/assignment_service.git
+[submodule "tutor_service"]
+	path = tutor_service
+	url = https://github.com/MEITREX/tutor_service.git
