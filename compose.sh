@@ -18,4 +18,4 @@ docker compose \
 -f ./gamification_service/docker-compose.yml \
 -f ./tutor_service/docker-compose.yml \
 --project-name gits \
-$@
+up --build
