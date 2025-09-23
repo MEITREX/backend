@@ -107,7 +107,7 @@ export default function (data) {
 function sendQuery(token, query, variables = {}) {
 	const headers = {
         'Authorization': `Bearer ${token.access_token}`,
-        "currentUser": "{\"id\": \"3afa8ad6-7702-4f17-b06c-503db0db28a3\",\"userName\": \"myluki2000\",\"firstName\": \"Luk\",\"lastName\": \"Tra\"}",
+        "currentUser": "{\"id\": \"0504b344-a5e5-4962-85fa-52baadd82dc3\",\"userName\": \"test\",\"firstName\": \"test\",\"lastName\": \"test\"}",
 		'Content-Type': 'application/json',
     }
 

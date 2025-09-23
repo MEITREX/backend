@@ -45,7 +45,7 @@ export default function (data) {
 		'Authorization': "Basic VmF1bHQtZ2VuZXJpYzpQaW1tZWxiZXJnZXI="
 	}
 
-	const res = http.get(`http://orange.informatik.uni-stuttgart.de`, {
+	const res = http.get(`http://dev.meitrex.de`, {
 		headers: headers,
 	});
 
