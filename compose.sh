@@ -17,5 +17,6 @@ docker compose \
 -f ./frontend/docker-compose.yml \
 -f ./gamification_service/docker-compose.yml \
 -f ./tutor_service/docker-compose.yml \
+-f ./notification_service/docker-compose.yml \
 --project-name gits \
 up --build
