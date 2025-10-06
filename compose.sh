@@ -19,4 +19,4 @@ docker compose \
 -f ./tutor_service/docker-compose.yml \
 -f ./notification_service/docker-compose.yml \
 --project-name gits \
-up --build
+$@
