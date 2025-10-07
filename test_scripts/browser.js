@@ -1,4 +1,4 @@
-import { browser } from 'k6/experimental/browser';
+import { browser } from 'k6/browser';
 import {sleep, check} from 'k6';
 
 export const options = {
@@ -21,12 +21,12 @@ export default async function () {
     const page = browser.newPage();
 
     try {
-        await page.goto('https://orange.informatik.uni-stuttgart.de');
+        await page.goto('https://dev.meitrex.de');
 
         sleep(1);
 
-        page.locator('input[name="username"]').type('rick');
-        page.locator('input[name="password"]').type('gits');
+        page.locator('input[name="username"]').type('test');
+        page.locator('input[name="password"]').type('test');
 
         const submitButton = page.locator('input[type="submit"]');
 
