@@ -1,7 +1,7 @@
 import http from 'k6/http';
 import { check } from 'k6';
 import { sleep } from 'k6';
-import {getToken} from "./token.js";
+import {getToken} from './token.js';
 
 export const options = {
   stages: [
@@ -26,7 +26,7 @@ export default function (data) {
         'Content-Type': 'application/json',
     }
 
-  const res = http.get('https://orange.informatik.uni-stuttgart.de',  {
+  const res = http.get('https://dev.meitrex.de',  {
       headers: headers});
     console.log(res.status)
 
